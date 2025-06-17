@@ -147,7 +147,7 @@ if __name__ == "__main__":
             "Shutter Speed": "1/100",
             "ISO": "400"
         }
-Camera.setSetting(settings_map["ISO"], "100")
-Camera.setSetting(settings_map["Shutter Speed"], "1/40")
-sleep(3)  # wait for camera to settle
-Camera.capturePhoto()
+# Camera.setSetting(settings_map["ISO"], "100")
+# Camera.setSetting(settings_map["Shutter Speed"], "1/40")
+# sleep(3)  # wait for camera to settle
+# Camera.capturePhoto()
