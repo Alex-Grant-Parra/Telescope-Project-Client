@@ -31,11 +31,18 @@ def get_camera_choices():
     print(f"get_camera_choices took {time.time() - start:.2f} seconds")
     return choices
 
+def setCameraSetting(label, value):
+    # label, value = listArg[0], listArg[1]
+    Camera.setSetting(label, value)
+    return f"Set {label} to {value}"
+
 function_map = {
     "get_temperature": get_temperature,
     "echo": echo,
     "add": add,
     "getCameraChoices":get_camera_choices,
+    "setCameraSetting":setCameraSetting,
+    
 }
 
 async def handle_server(ws):
