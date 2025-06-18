@@ -38,8 +38,9 @@ def setCameraSetting(label, value):
     Camera.setSetting(label, value)
     return f"Set {label} to {value}"
 
-def capturePhoto():
-    files = Camera.capturePhoto()
+def capturePhoto(currentid):
+    files = Camera.capturePhoto(currentid=currentid) # Returns a list of two file names, one raw, one jpeg
+
 
     print(files)
 
@@ -63,7 +64,7 @@ def capturePhoto():
     if missing_files:
         print(f"[ERROR] The following files are missing: {missing_files}")
         return
-
+    
     server_url = "http://82.36.204.156:25566/upload"
 
     file_data = {f"file{index}": open(file, "rb") for index, file in enumerate(files)}

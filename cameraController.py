@@ -74,12 +74,12 @@ class Camera:
         return folder
 
     @staticmethod
-    def capturePhoto(base_folder="photos", max_retries=3):
+    def capturePhoto(base_folder="photos", max_retries=3, currentid=None):
         save_folder = Camera.getPhotoFolder(base_folder)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         for attempt in range(1, max_retries + 1):
             capture = run(
-                ["gphoto2", "--capture-image-and-download", "--filename", f"{save_folder}/photo_{timestamp}.%C"],
+                ["gphoto2", "--capture-image-and-download", "--filename", f"{save_folder}/{currentid}_photo_{timestamp}.%C"],
                 capture_output=True, text=True
             )
             print(f"[DEBUG] Capture output: {capture.stdout} {capture.stderr}")
