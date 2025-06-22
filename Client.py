@@ -13,7 +13,13 @@ import signal
 CLIENT_ID = "pi-001"
 SERVER_URI = "ws://82.36.204.156:8001"
 
-liveview_enabled = False
+liveview_enabled = True
+
+
+# pkill -f gvfs-gphoto2-volume-monitor
+# pkill -f gvfsd-gphoto2
+
+
 
 def get_temperature():
     return 22.7
