@@ -1,0 +1,4 @@
+asyncio
+websockets
+ujson
+requests
